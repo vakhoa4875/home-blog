@@ -1,0 +1,59 @@
+/* Primary color: #B17F59 */
+:root {
+  --primary-color: #B17F59;
+  --primary-color-text: #FFFFFF;
+  --primary-color-hover: #A56F4A;
+  --primary-color-active: #9A6340;
+  --primary-border-color: #B17F59;
+}
+
+/* Secondary color: #A5B68D */
+:root {
+  --secondary-color: #A5B68D;
+  --secondary-color-text: #FFFFFF;
+  --secondary-color-hover: #94A57D;
+  --secondary-color-active: #84946D;
+  --secondary-border-color: #A5B68D;
+}
+
+/* Accent color: #C1CFA1 */
+:root {
+  --accent-color: #C1CFA1;
+  --accent-color-text: #FFFFFF;
+  --accent-color-hover: #B1BF91;
+  --accent-color-active: #A1AF81;
+  --accent-border-color: #C1CFA1;
+}
+
+/* Background color: #EDE8DC */
+:root {
+  --background-color: #EDE8DC;
+  --background-color-text: #333333;
+  --background-color-hover: #E0DCCF;
+  --background-color-active: #D3CFC2;
+  --background-border-color: #EDE8DC;
+}
+
+/* Apply the custom colors to PrimeReact components */
+body {
+  background-color: var(--background-color);
+  color: var(--background-color-text);
+}
+
+.p-button {
+  background-color: var(--primary-color);
+  color: var(--primary-color-text);
+  border-color: var(--primary-border-color);
+}
+
+.p-button:hover {
+  background-color: var(--primary-color-hover);
+  border-color: var(--primary-border-color);
+}
+
+.p-button:active {
+  background-color: var(--primary-color-active);
+  border-color: var(--primary-border-color);
+}
+
+/* Add more custom styles as needed */

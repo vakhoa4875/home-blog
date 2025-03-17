@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@layer tailwind-base, primereact, tailwind-utilities;
+
+@import 'primereact/resources/themes/lara-light-indigo/theme.css' layer(primereact);
+@import './custom-theme.css'; /* Custom theme overrides */
+
+@layer tailwind-base {
+  @tailwind base;
+}
+
+@layer tailwind-utilities {
+  @tailwind components;
+  @tailwind utilities;
+}
