@@ -3,13 +3,40 @@
 @layer tailwind-base, primereact, tailwind-utilities;
 
 @import 'primereact/resources/themes/lara-light-indigo/theme.css' layer(primereact);
-@import './custom-theme.css'; /* Custom theme overrides */
+@import './custom-theme.css';
+/* Custom theme overrides */
 
-@layer tailwind-base {
-  @tailwind base;
+.custom\:block {
+  @media (width >=1040px) {
+    display: block;
+  }
 }
 
-@layer tailwind-utilities {
-  @tailwind components;
-  @tailwind utilities;
+.custom\:hidden {
+  @media (width >=1040px) {
+    display: none;
+  }
+}
+
+/* Panel Menu Styles */
+.p-panelmenu .p-panelmenu-header .p-panelmenu-header-content {
+  border: none !important;
+  background: white;
+  border-radius: 0.375rem;
+  transition: none;
+}
+
+.p-panelmenu .p-panelmenu-content {
+  border: none !important;
+}
+
+/* Menubar Styles */
+.p-menubar {
+  border: none !important;
+  background-color: white !important;
+  padding: 0 !important;
+}
+
+.p-menubar .p-submenu-list {
+  width: max-content !important;
 }

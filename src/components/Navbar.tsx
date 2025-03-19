@@ -1,26 +1,80 @@
 import { Button } from 'primereact/button';
 import { Menubar } from 'primereact/menubar';
 import { MenuItem } from 'primereact/menuitem';
+import { PanelMenu } from 'primereact/panelmenu';
 import { Sidebar } from 'primereact/sidebar';
-import React, { JSX, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-export type navbarProps = {
-  label: string;
-  url: string;
-  template: (item: MenuItem) => JSX.Element;
-};
-
-export const menuItems: navbarProps[] = [
-  { label: 'Style', url: '#', template: (item: MenuItem) => <Link to={item.url ?? '#'} className="p-menuitem-link text-gray-700 hover:text-gray-900 font-medium px-4 py-2">{item.label}</Link> },
-  { label: 'Beauty', url: '#', template: (item: MenuItem) => <Link to={item.url ?? '#'} className="p-menuitem-link text-gray-700 hover:text-gray-900 font-medium px-4 py-2">{item.label}</Link> },
-  { label: 'Lifestyle', url: '#', template: (item: MenuItem) => <Link to={item.url ?? '#'} className="p-menuitem-link text-gray-700 hover:text-gray-900 font-medium px-4 py-2">{item.label}</Link> },
-  { label: 'Home', url: '#', template: (item: MenuItem) => <Link to={item.url ?? '#'} className="p-menuitem-link text-gray-700 hover:text-gray-900 font-medium px-4 py-2">{item.label}</Link> },
-  { label: 'Travel', url: '#', template: (item: MenuItem) => <Link to={item.url ?? '#'} className="p-menuitem-link text-gray-700 hover:text-gray-900 font-medium px-4 py-2">{item.label}</Link> },
-  { label: 'Shop', url: '#', template: (item: MenuItem) => <Link to={item.url ?? '#'} className="p-menuitem-link text-gray-700 hover:text-gray-900 font-medium px-4 py-2">{item.label}</Link> },
-  { label: 'About', url: '#', template: (item: MenuItem) => <Link to={item.url ?? '#'} className="p-menuitem-link text-gray-700 hover:text-gray-900 font-medium px-4 py-2">{item.label}</Link> },
+export const menuItems: MenuItem[] = [
+  {
+    label: 'Style',
+    icon: 'pi pi-tag',
+    items: [
+      {
+        label: 'Fashion',
+        icon: 'pi pi-shopping-cart',
+        url: '/fashion',
+      },
+      {
+        label: 'Beauty',
+        icon: 'pi pi-sparkles',
+        url: '/jewelry',
+      },
+    ]
+  },
+  {
+    label: 'Self',
+    icon: 'pi pi-user',
+    items: [
+      {
+        label: 'Wellness',
+        icon: 'pi pi-heart',
+        url: '/wellness',
+      },
+      {
+        label: 'Work & Money',
+        icon: 'pi pi-money-bill',
+        url: '/work-money',
+      },
+      {
+        label: 'Relationships',
+        icon: 'pi pi-users',
+        url: '/relationships',
+      },
+      {
+        label: 'Parenthood',
+        icon: 'pi pi-users',
+        url: '/parenthood',
+      },
+    ]
+  },
+  {
+    label: 'Lifestyle',
+    icon: 'pi pi-globe',
+    url: '/lifestyle',
+  },
+  {
+    label: 'Home',
+    icon: 'pi pi-home',
+    url: '/',
+  },
+  {
+    label: 'Travel',
+    icon: 'pi pi-map',
+    url: '/travel',
+  },
+  {
+    label: 'Shop',
+    icon: 'pi pi-shopping-cart',
+    url: '/shop',
+  },
+  {
+    label: 'About',
+    icon: 'pi pi-info-circle',
+    url: '/about',
+  },
 ];
-
 const Navbar: React.FC = () => {
   const [sidebarVisible, setSidebarVisible] = useState(false);
 
@@ -33,13 +87,12 @@ const Navbar: React.FC = () => {
               The Good Trade
             </Link>
           </div>
-          <div className="hidden md:block">
+          <div className="hidden custom:block">
             <Menubar
               model={menuItems}
-              className="border-none bg-transparent p-0"
             />
           </div>
-          <div className="md:hidden">
+          <div className="custom:hidden">
             <Button
               icon="pi pi-bars"
               className="p-button-text p-button-plain text-gray-700"
@@ -55,19 +108,7 @@ const Navbar: React.FC = () => {
         className="w-64"
       >
         <h2 className="text-xl font-bold mb-4">The Good Trade</h2>
-        <ul className="flex flex-col gap-4">
-          {menuItems.map((item, index) => (
-            <li key={index}>
-              <Link
-                to={item.url}
-                className="text-gray-700 hover:text-gray-900 font-medium"
-                onClick={() => setSidebarVisible(false)}
-              >
-                {item.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <PanelMenu model={menuItems}></PanelMenu>
       </Sidebar>
     </nav>
   );

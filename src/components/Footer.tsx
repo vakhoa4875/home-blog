@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   return (
@@ -14,17 +15,17 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="text-sm space-y-2">
-              <li><a href="#" className="hover:underline">About</a></li>
-              <li><a href="#" className="hover:underline">Contact</a></li>
-              <li><a href="#" className="hover:underline">Shop</a></li>
+              <li><Link to="/about" className="hover:underline">About</Link></li>
+              <li><Link to="/contact" className="hover:underline">Contact</Link></li>
+              <li><Link to="/shop" className="hover:underline">Shop</Link></li>
             </ul>
           </div>
           <div>
             <h3 className="text-lg font-semibold mb-4">Connect</h3>
             <ul className="text-sm space-y-2">
-              <li><a href="#" className="hover:underline">Instagram</a></li>
-              <li><a href="#" className="hover:underline">Twitter</a></li>
-              <li><a href="#" className="hover:underline">Facebook</a></li>
+              <li><Link to="/instagram" className="hover:underline">Instagram</Link></li>
+              <li><Link to="/twitter" className="hover:underline">Twitter</Link></li>
+              <li><Link to="/facebook" className="hover:underline">Facebook</Link></li>
             </ul>
           </div>
         </div>
