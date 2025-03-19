@@ -11,8 +11,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@flaticon/flaticon-uicons": "^3.3.1",
     "@tailwindcss/vite": "^4.0.14",
-    "primeicons": "^7.0.0",
     "primereact": "^10.9.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

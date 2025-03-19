@@ -1,10 +1,13 @@
+/* Import TailwindCSS */
 @import "tailwindcss";
 
-@layer tailwind-base, primereact, tailwind-utilities;
-
+/* Import PrimeReact theme */
 @import 'primereact/resources/themes/lara-light-indigo/theme.css' layer(primereact);
+
+/* Import custom theme overrides */
 @import './custom-theme.css';
-/* Custom theme overrides */
+
+@layer tailwind-base, primereact, tailwind-utilities;
 
 .custom\:block {
   @media (width >=1040px) {
@@ -33,10 +36,18 @@
 /* Menubar Styles */
 .p-menubar {
   border: none !important;
-  background-color: white !important;
+  background-color: white ! important;
   padding: 0 !important;
 }
 
 .p-menubar .p-submenu-list {
   width: max-content !important;
+}
+
+.p-menuitem-icon,
+.fi {
+  display: flex;
+  align-items: center;
+  /* Căn giữa icon */
+  justify-content: center;
 }
