@@ -1,0 +1,18 @@
+/* ========================= */
+/* Font Face */
+/* ========================= */
+
+@font-face {
+    font-family: 'Bemirs';
+    src: url('./assets/fonts/BemirsDemoVersionRegular-L360Z.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ========================= */
+/* Custom Classes */
+/* ========================= */
+
+.logo-font {
+    font-family: 'Bemirs', sans-serif;
+}

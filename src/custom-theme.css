@@ -1,3 +1,7 @@
+/* ========================= */
+/* Color Variables */
+/* ========================= */
+
 /* Primary color: #B17F59 */
 :root {
   --primary-color: #B17F59;
@@ -34,11 +38,29 @@
   --background-border-color: #EDE8DC;
 }
 
-/* Apply the custom colors to PrimeReact components */
+/* ========================= */
+/* Typography Variables */
+/* ========================= */
+
+:root {
+  --font-family: "Noto Sans JP", sans-serif;
+  --font-size: 1rem;
+  --font-weight: 400;
+}
+
+/* ========================= */
+/* Global Styles */
+/* ========================= */
+
 body {
   background-color: var(--background-color);
   color: var(--background-color-text);
+  font-family: var(--font-family) !important;
 }
+
+/* ========================= */
+/* PrimeReact Component Styles */
+/* ========================= */
 
 .p-button {
   background-color: var(--primary-color);
@@ -55,5 +77,3 @@ body {
   background-color: var(--primary-color-active);
   border-color: var(--primary-border-color);
 }
-
-/* Add more custom styles as needed */
