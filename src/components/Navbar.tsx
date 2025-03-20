@@ -11,12 +11,12 @@ const Navbar: React.FC = () => {
   const items = menuItems();
 
   return (
-    <nav className="fixed top-0 z-50 w-full bg-white shadow-md">
+    <nav className="fixed top-0 z-50 w-full bg-white shadow-sm">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
             <Link to="/" className="text-2xl font-bold text-gray-900">
-              The Good Trade
+              Home Blog
             </Link>
           </div>
           <div className="hidden custom:block">
@@ -34,10 +34,10 @@ const Navbar: React.FC = () => {
       <Sidebar
         visible={sidebarVisible}
         onHide={() => setSidebarVisible(false)}
+        header={<h2 className="text-xl font-bold">Home Blog</h2>}
         position="right"
         className="w-64"
       >
-        <h2 className="mb-4 text-xl font-bold">The Good Trade</h2>
         <PanelMenu model={items}></PanelMenu>
       </Sidebar>
     </nav>
