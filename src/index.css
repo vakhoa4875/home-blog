@@ -9,10 +9,21 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Monsterrat';
+    src: url('./assets/fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* ========================= */
 /* Custom Classes */
 /* ========================= */
 
 .logo-font {
     font-family: 'Bemirs', sans-serif;
+}
+
+.title-font {
+    font-family: 'Monsterrat', sans-serif;
 }
