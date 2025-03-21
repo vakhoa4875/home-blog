@@ -27,20 +27,20 @@ export const bentoBlogData: BlogProps[] = [
         category: 'Decor',
         imageUrl: 'https://www.thegoodtrade.com/wp-content/uploads/2025/02/tanaphong-toochinda-WddCult7llk-unsplash-882x1103.jpg',
         url: '/blog',
-        imageHeight: 'h-[42rem]',
+        imageHeight: 'sm:h-[42rem] h-72',
     },
     {
         title: 'A Therapist Explains How To Regulate Your Nervous System When You’re Overwhelme ',
         category: 'Self',
         imageUrl: 'https://www.thegoodtrade.com/wp-content/uploads/2025/03/keren-levand-UyfAD6vaoDA-unsplash-576x862.jpg',
         url: '/blog',
-        imageHeight: 'h-[18rem]',
+        imageHeight: 'md:h-[18rem] h-72',
     },
     {
         title: 'Why The Spring Equinox is The Best Time to Go After Your Goals ',
         category: 'Self',
         imageUrl: 'https://www.thegoodtrade.com/wp-content/uploads/2025/03/masaaki-komori-Z8TQv3yKQd4-unsplash-576x863.jpg',
         url: '/blog',
-        imageHeight: 'h-[18rem]',
+        imageHeight: 'md:h-[18rem] h-72',
     },
 ];

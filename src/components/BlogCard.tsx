@@ -8,7 +8,7 @@ const BlogCard: React.FC<BlogProps> = ({ title, category, imageUrl, url, imageHe
         <img
             alt={title}
             src={imageUrl}
-            className={`w-full object-cover rounded-lg ${imageHeight ?? 'h-[28rem]'}`}
+            className={`w-full object-cover rounded-lg ${imageHeight ?? 'h-72 md:h-[28rem]'}`}
         />
     );
 

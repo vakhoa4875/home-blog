@@ -16,7 +16,7 @@ const BentoBlogShowcase: React.FC<BentoBlogShowcaseProps> = ({ blogs }) => {
             <h2 className="text-2xl md:text-3xl font-thin title-font text-gray-900 text-center mb-8">
                 Xu hướng tuần này
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <BlogCard
                     title={blogs[0].title}
                     category={blogs[0].category}

@@ -3,7 +3,7 @@ import { cardData } from '../datas/exData';
 import { BlogProps } from '../types/BlogProps';
 import BlogCard from './BlogCard';
 
-const SectionRecommend: React.FC = () => {
+const RecommendSection: React.FC = () => {
     const [blogDatas, setBlogDatas] = useState<BlogProps[]>(cardData);
 
     const renderBlogCards = () => {
@@ -29,4 +29,4 @@ const SectionRecommend: React.FC = () => {
     );
 };
 
-export default SectionRecommend;
+export default RecommendSection;

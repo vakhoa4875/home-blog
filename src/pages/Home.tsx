@@ -1,13 +1,13 @@
 import React from 'react';
 import BentoBlogShowcase from '../components/BentoBlogShowcase';
 import NewsletterSection from '../components/NewsletterSection';
-import SectionRecommend from '../components/SectionRecommend';
+import RecommendSection from '../components/RecommendSection';
 import { bentoBlogData } from '../datas/exData';
 
 const Home: React.FC = () => {
   return (
     <>
-      <SectionRecommend />
+      <RecommendSection />
       <NewsletterSection />
       <BentoBlogShowcase blogs={bentoBlogData} />
     </>

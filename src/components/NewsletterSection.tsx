@@ -12,7 +12,7 @@ const NewsletterSection: React.FC = () => {
     };
 
     return (
-        <div className="text-center max-w-5xl mx-auto py-12 px-4 title-font">
+        <div className="text-center max-w-5xl mx-auto md:py-12 py-8 h- title-font">
             <h2 className="text-2xl md:text-3xl font-thin text-gray-900 mb-2">
                 Bản tin 30 giây gửi đến email của bạn mỗi ngày với mẹo chăm sóc bản thân và sống bền vững 🌿
             </h2>
