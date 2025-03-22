@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
-import { cardData } from '../datas/exData';
-import { BlogProps } from '../types/BlogProps';
+import React from 'react';
+import { BlogSectionProps } from '../types/BlogProps';
 import BlogCard from './BlogCard';
 
-const RecommendSection: React.FC = () => {
-    const [blogDatas, setBlogDatas] = useState<BlogProps[]>(cardData);
+const RecommendSection: React.FC<BlogSectionProps> = ({ blogs }) => {
 
     const renderBlogCards = () => {
-        return blogDatas.map((card, index) => (
+        return blogs.slice(0, 3).map((card, index) => (
             <BlogCard
                 key={index}
                 title={card.title}

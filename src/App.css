@@ -57,13 +57,13 @@
   width: max-content !important;
 }
 
-.p-menubar .p-menuitem.p-highlight > .p-menuitem-content {
+.p-menubar .p-menuitem.p-highlight>.p-menuitem-content {
   background: var(--background-color) !important;
 }
 
-.p-menubar .p-menuitem.p-highlight > .p-menuitem-content .p-menuitem-link .p-menuitem-icon,
-.p-menubar .p-menuitem.p-highlight > .p-menuitem-content .p-menuitem-link .p-submenu-icon,
-.p-menubar .p-menuitem.p-highlight > .p-menuitem-content .p-menuitem-link .p-menuitem-text {
+.p-menubar .p-menuitem.p-highlight>.p-menuitem-content .p-menuitem-link .p-menuitem-icon,
+.p-menubar .p-menuitem.p-highlight>.p-menuitem-content .p-menuitem-link .p-submenu-icon,
+.p-menubar .p-menuitem.p-highlight>.p-menuitem-content .p-menuitem-link .p-menuitem-text {
   color: var(--primary-color-active) !important;
 }
 
@@ -75,7 +75,8 @@
 .fi {
   display: flex;
   align-items: center;
-  justify-content: center; /* Center icons */
+  justify-content: center;
+  /* Center icons */
 }
 
 /* ========================= */
@@ -92,4 +93,13 @@
 
 .p-card-body {
   padding: 0.875rem 0.25rem !important;
+}
+
+/* ========================= */
+/* Title Styles */
+/* ========================= */
+
+.font-title {
+  @apply text-2xl md:text-3xl font-thin text-gray-900 text-center mb-8;
+  font-family: 'Monsterrat', sans-serif;
 }
