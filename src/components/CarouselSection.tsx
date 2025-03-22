@@ -4,16 +4,16 @@ import { BlogProps, BlogSectionProps } from '../types/BlogProps';
 import BlogCard from './BlogCard';
 import CarouselSectionHeader from './CarouselSectionHeader';
 
-const MindfulLivingSection: React.FC<BlogSectionProps> = ({ blogs, header }) => {
+const CarouselSection: React.FC<BlogSectionProps> = ({ blogs, header, style }) => {
     const responsiveOptions = [
         {
             breakpoint: '1024px',
-            numVisible: 4,
+            numVisible: style ? 3 : 4,
             numScroll: 1,
         },
         {
             breakpoint: '768px',
-            numVisible: 3,
+            numVisible: style ? 2 : 3,
             numScroll: 1,
         },
         {
@@ -43,7 +43,7 @@ const MindfulLivingSection: React.FC<BlogSectionProps> = ({ blogs, header }) => 
     };
 
     return (
-        <div className="p-4">
+        <div className={style ?? 'my-8'}>
             <CarouselSectionHeader
                 title={header?.title ?? 'No title'}
                 subTitle={header?.subTitle ?? 'No subtitle'}
@@ -62,4 +62,4 @@ const MindfulLivingSection: React.FC<BlogSectionProps> = ({ blogs, header }) => 
     );
 };
 
-export default MindfulLivingSection;
+export default CarouselSection;

@@ -12,7 +12,7 @@ const BentoBlogShowcase: React.FC<BentoBlogShowcaseProps> = ({ blogs }) => {
     }
 
     return (
-        <div className="p-4">
+        <div className="my-8">
             <h2 className="font-title">
                 Xu hướng tuần này
             </h2>
