@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { BlogSectionTitleProps } from "../types/BlogProps";
+import { BlogSectionTitleProps } from "../../../types/BlogProps";
 
 const CarouselSectionHeader: React.FC<BlogSectionTitleProps> = ({ title, subTitle, url }) => {
     return (

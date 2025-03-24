@@ -1,7 +1,7 @@
 import { Card } from 'primereact/card';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BlogProps } from '../types/BlogProps';
+import { BlogProps } from '../../../types/BlogProps';
 
 const BlogCard: React.FC<BlogProps> = ({ title, category, imageUrl, url, imageHeight }) => {
     const header = (

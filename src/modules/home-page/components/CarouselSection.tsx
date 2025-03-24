@@ -1,6 +1,6 @@
 import { Carousel } from 'primereact/carousel';
 import React from 'react';
-import { BlogProps, BlogSectionProps } from '../types/BlogProps';
+import { BlogProps, BlogSectionProps } from '../../../types/BlogProps';
 import BlogCard from './BlogCard';
 import CarouselSectionHeader from './CarouselSectionHeader';
 

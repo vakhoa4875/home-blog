@@ -1,5 +1,5 @@
 import React from 'react';
-import { BlogProps } from '../types/BlogProps';
+import { BlogProps } from '../../../types/BlogProps';
 import BlogCard from './BlogCard';
 
 interface BentoBlogShowcaseProps {

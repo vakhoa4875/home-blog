@@ -6,6 +6,8 @@ import About from './pages/About';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Shop from './pages/Shop';
+import BlogPage from './pages/BlogPage';
+import Test from './pages/Test';
 
 const App: React.FC = () => {
   return (
@@ -13,8 +15,10 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path="blog" element={<BlogPage />} />
           <Route path="about" element={<About />} />
           <Route path="shop" element={<Shop />} />
+          <Route path="test" element={<Test />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

@@ -4,7 +4,7 @@ import { PanelMenu } from "primereact/panelmenu";
 import { Sidebar } from "primereact/sidebar";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { menuItems } from "./menuItems";
+import { menuItems } from "../modules/home-page/components/menuItems";
 
 const Navbar: React.FC = () => {
   const [sidebarVisible, setSidebarVisible] = useState(false);

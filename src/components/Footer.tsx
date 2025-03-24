@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import NewsletterSection from './NewsletterSection';
+import NewsletterSection from '../modules/home-page/components/NewsletterSection';
 
 const Footer: React.FC = () => {
   return (

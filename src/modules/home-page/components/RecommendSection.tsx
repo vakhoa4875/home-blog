@@ -1,5 +1,5 @@
 import React from 'react';
-import { BlogSectionProps } from '../types/BlogProps';
+import { BlogSectionProps } from '../../../types/BlogProps';
 import BlogCard from './BlogCard';
 
 const RecommendSection: React.FC<BlogSectionProps> = ({ blogs }) => {

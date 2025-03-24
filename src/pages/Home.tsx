@@ -1,8 +1,8 @@
 import React from 'react';
-import BentoBlogShowcase from '../components/BentoBlogShowcase';
-import CarouselSection from '../components/CarouselSection';
-import NewsletterSection from '../components/NewsletterSection';
-import RecommendSection from '../components/RecommendSection';
+import BentoBlogShowcase from '../modules/home-page/components/BentoBlogShowcase';
+import CarouselSection from '../modules/home-page/components/CarouselSection';
+import NewsletterSection from '../modules/home-page/components/NewsletterSection';
+import RecommendSection from '../modules/home-page/components/RecommendSection';
 import { bentoBlogData, carouselData, carouselTitles, recommendData } from '../datas/exData';
 
 const Home: React.FC = () => {
