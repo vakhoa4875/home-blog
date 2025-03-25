@@ -1,39 +1,12 @@
-import React from 'react';
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css'; // Style mặc định
+import { Editor, EditorTextChangeEvent } from "primereact/editor";
+import { useState } from "react";
 
-interface BlogContentEditorProps {
-  initialValue: string;
-  onChange: (content: string) => void;
-}
+export default function BlogContentEditor() {
+  const [text, setText] = useState<string>('');
 
-const BlogContentEditor: React.FC<BlogContentEditorProps> = ({ initialValue, onChange }) => {
   return (
-    <ReactQuill
-      theme="snow"
-      value={initialValue}
-      onChange={onChange}
-      modules={{
-        toolbar: [
-          [{ header: [1, 2, false] }],
-          ['bold', 'italic', 'underline'],
-          ['image', 'link'],
-          [{ list: 'ordered' }, { list: 'bullet' }],
-        ],
-      }}
-      formats={[
-        'header',
-        'bold',
-        'italic',
-        'underline',
-        'image',
-        'link',
-        'list',
-        'bullet',
-      ]}
-      className="bg-white"
-    />
-  );
-};
-
-export default BlogContentEditor;
+    <div className="relative justify-content-center bg-white">
+      <Editor value={text} onTextChange={(e: EditorTextChangeEvent) => setText(e.htmlValue ?? '')} />
+    </div>
+  )
+}

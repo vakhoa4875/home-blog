@@ -3,11 +3,11 @@ import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import './App.css';
 import Layout from './components/Layout';
 import About from './pages/About';
+import BlogEditor from './pages/BlogEditor';
+import BlogPage from './pages/BlogPage';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Shop from './pages/Shop';
-import BlogPage from './pages/BlogPage';
-import Test from './pages/Test';
 
 const App: React.FC = () => {
   return (
@@ -18,7 +18,7 @@ const App: React.FC = () => {
           <Route path="blog" element={<BlogPage />} />
           <Route path="about" element={<About />} />
           <Route path="shop" element={<Shop />} />
-          <Route path="test" element={<Test />} />
+          <Route path="editor" element={<BlogEditor />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
