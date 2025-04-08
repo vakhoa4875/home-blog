@@ -5,10 +5,29 @@ import { Sidebar } from "primereact/sidebar";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { menuItems } from "../modules/home-page/components/menuItems";
+import { isAuthenticated } from "../config/tokenStorage";
 
 const Navbar: React.FC = () => {
   const [sidebarVisible, setSidebarVisible] = useState(false);
   const items = menuItems();
+  const KEYCLOAK_URL = "http://localhost:8080";
+  const REDIRECT_URI = "http://localhost:5173/oauth/callback";
+  const KEYCLOAK_CLIENT_ID = "blog-app";
+  const login = () => {
+    window.location.href = `${KEYCLOAK_URL}/realms/blog-realm/protocol/openid-connect/auth?client_id=${KEYCLOAK_CLIENT_ID}&response_type=code&redirect_uri=${REDIRECT_URI}`;
+  }
+  const logout = () => {
+    window.location.href = `${KEYCLOAK_URL}/auth/realms/hyper/protocol/openid-connect/logout?client_id=hyper&redirect_uri=http://localhost:3000/`;
+  };
+
+  const toggleLogin = () => {
+    if (isAuthenticated()) {
+      logout();
+    } else {
+      login();
+    }
+  }
+
 
   return (
     <nav className="fixed top-0 z-50 w-full bg-white shadow-sm">
@@ -19,6 +38,7 @@ const Navbar: React.FC = () => {
               Home Blog
             </Link>
           </div>
+          <Button label="loginwg" onClick={toggleLogin}></Button>
           <div className="hidden custom:block">
             <Menubar model={items} />
           </div>

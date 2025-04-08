@@ -1,6 +1,6 @@
 // services/graphqlService.ts
 export async function graphqlRequest(query: string, variables?: any) {
-    const token = localStorage.getItem("access_token");
+    const token = sessionStorage.getItem("access_token");
   
     const res = await fetch("http://localhost:8888/graphql", {
       method: "POST",
