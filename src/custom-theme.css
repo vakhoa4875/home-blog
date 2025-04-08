@@ -77,3 +77,20 @@ body {
   background-color: var(--primary-color-active);
   border-color: var(--primary-border-color);
 }
+
+.btn-transparent {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-transparent:hover {
+  background-color: var(--primary-color-hover);
+  color: var(--primary-color-text);
+}
+
+.btn-transparent:active {
+  background-color: var(--primary-color-active);
+  color: var(--primary-color-text);
+}
