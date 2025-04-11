@@ -14,7 +14,7 @@ import {
   isAuthenticated,
   getCurrentUser,
 } from "../config/tokenStorage";
-import { logoutRedirect, refreshTokenRequest, TokenResponse } from "../modules/auth/services/authService"; // bạn cần có hàm này
+import { logout, refreshTokenRequest, TokenResponse } from "../modules/auth/services/authService"; // bạn cần có hàm này
 
 interface AuthContextType {
   isAuthenticated: boolean;
@@ -77,7 +77,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     clearAuth();
     setAccessToken(null);
     setUser(null);
-    logoutRedirect();
+    logout();
   }, []);
 
   const contextValue = useMemo(

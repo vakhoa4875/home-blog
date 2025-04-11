@@ -1,11 +1,15 @@
 import { Button } from "primereact/button";
+import { Dialog } from 'primereact/dialog';
 import { Menubar } from "primereact/menubar";
 import { PanelMenu } from "primereact/panelmenu";
 import { Sidebar } from "primereact/sidebar";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { menuItems } from "../modules/home-page/components/menuItems";
 import { isAuthenticated } from "../config/tokenStorage";
+import { logout } from "../modules/auth/services/authService";
+import { menuItems } from "../modules/home-page/components/menuItems";
+
+export type position = 'top' | 'center' | 'bottom' | 'left' | 'right' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
 
 const Navbar: React.FC = () => {
   const [sidebarVisible, setSidebarVisible] = useState(false);
@@ -16,9 +20,6 @@ const Navbar: React.FC = () => {
   const login = () => {
     window.location.href = `${KEYCLOAK_URL}/realms/blog-realm/protocol/openid-connect/auth?client_id=${KEYCLOAK_CLIENT_ID}&response_type=code&redirect_uri=${REDIRECT_URI}`;
   }
-  const logout = () => {
-    window.location.href = `${KEYCLOAK_URL}/auth/realms/hyper/protocol/openid-connect/logout?client_id=hyper&redirect_uri=http://localhost:3000/`;
-  };
 
   const toggleLogin = () => {
     if (isAuthenticated()) {
@@ -27,6 +28,13 @@ const Navbar: React.FC = () => {
       login();
     }
   }
+  const [visible, setVisible] = useState<boolean>(false);
+  const [position, setPosition] = useState<position>('center');
+
+  const show = (position: position) => {
+    setPosition(position);
+    setVisible(true);
+  };
 
 
   return (
@@ -38,10 +46,15 @@ const Navbar: React.FC = () => {
               Home Blog
             </Link>
           </div>
-          <Button label="loginwg" onClick={toggleLogin}></Button>
           <div className="hidden custom:block">
             <Menubar model={items} />
           </div>
+          <Button icon="fi fi-rr-enter" label="Đăng nhập" className="btn-transparent" onClick={() => show('top')} ></Button>
+
+
+          <Dialog visible={visible} position={position} style={{ width: 'auto' }} onHide={() => { if (!visible) return; setVisible(false); }} draggable={false} resizable={false}>
+            <Button icon="fi fi-brands-google" label="Đăng nhập với Google" onClick={toggleLogin}></Button>
+          </Dialog>
           <div className="custom:hidden">
             <Button
               icon="fi fi-rr-menu-burger"

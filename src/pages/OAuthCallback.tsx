@@ -3,26 +3,32 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { handleOAuthCallback } from '../modules/auth/services/authService';
 
-const OAuthCallBack: React.FC = () => {
+const OAuthCallback: React.FC = () => {
 
     const navigate = useNavigate();
     const { login } = useAuth();
 
     useEffect(() => {
+        let called = false;
+    
         const handle = async () => {
+            if (called) return; // Đảm bảo chỉ gọi 1 lần
+            called = true;
+    
             const token = await handleOAuthCallback();
+    
             if (token) {
                 login(token);
-                window.history.replaceState({}, document.title, "/");
-                navigate("/");
+                window.history.replaceState({}, document.title, "/"); // Clean URL
+                navigate("/"); // Chuyển hướng về home
             } else {
-                // Optional: hiển thị lỗi
                 navigate("/login?error=oauth_failed");
             }
         };
-
+    
         handle();
     }, [navigate, login]);
+    
 
     return (
         <div className='text-center min-h-screen bg-[var(--background-color)] px-4'>
@@ -32,4 +38,4 @@ const OAuthCallBack: React.FC = () => {
     );
 };
 
-export default OAuthCallBack;
+export default OAuthCallback;

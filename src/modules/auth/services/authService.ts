@@ -1,6 +1,6 @@
 // src/modules/auth/services/authService.ts
 import api from "../../../config/axiosInstance";
-import { saveAuthTokens } from "../../../config/tokenStorage";
+import { clearAuth, getAuth, saveAuthTokens } from "../../../config/tokenStorage";
 
 export interface TokenResponse {
   access_token: string;
@@ -32,6 +32,8 @@ export const handleOAuthCallback = async (): Promise<TokenResponse | null> => {
     });
 
     const tokenData = response.data;
+    console.log("✅ Token received:", tokenData);
+
     saveAuthTokens(tokenData);
     return tokenData;
   } catch (error) {
@@ -50,11 +52,16 @@ export const refreshTokenRequest = (refreshToken: string) => {
 };
 
 /**
- * Đăng xuất người dùng và chuyển hướng về trang logout của Keycloak
+ * Gửi yêu cầu logout đến Keycloak
+ * @returns Promise<void>
  */
-export const logoutRedirect = () => {
-  const logoutUrl = import.meta.env.VITE_KEYCLOAK_LOGOUT_URL;
-  const redirectUri = encodeURIComponent(window.location.origin);
-  window.location.href = `${logoutUrl}?redirect_uri=${redirectUri}`;
+export const logout = () => {
+  api.post("/auth/oauth/logout", {
+    refresh_token: getAuth()?.refresh_token,
+  }).catch((error) => {
+    console.error("🚨 Error during logout:", error);
+  }).then(() => {
+    clearAuth(); // Xóa thông tin xác thực từ local storage  
+  });
 };
 

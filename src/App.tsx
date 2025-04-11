@@ -8,7 +8,7 @@ import BlogEditor from './pages/BlogEditor';
 import BlogPage from './pages/BlogPage';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
-import OAuthCallBack from './pages/OAuthCallBack';
+import OAuthCallback from './pages/OAuthCallback';
 import Shop from './pages/Shop';
 
 const App: React.FC = () => {
@@ -25,7 +25,7 @@ const App: React.FC = () => {
             <Route path="editor" element={<BlogEditor />} />
             <Route path="*" element={<NotFound />} />
           </Route>
-          <Route path="/oauth/callback" element={<OAuthCallBack />} />
+          <Route path="/oauth/callback" element={<OAuthCallback />} />
         </Routes>
       </Router>
 
